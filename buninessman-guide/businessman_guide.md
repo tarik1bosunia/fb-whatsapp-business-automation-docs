@@ -27,6 +27,7 @@ By following this guide, you will be able to:
   - [Step 3: Verify and Save](#step-3-verify-and-save)
   - [Step 4: Subscribe to Permissions](#step-4-subscribe-to-permissions)
 - [WhatsApp Integration](#whatsapp-integration)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -44,7 +45,16 @@ First, you need to create a Facebook App. You can do this by visiting the [Faceb
 
 ![Creating a Facebook App](./images/create_fb_app_001.png)
 ![App creation process](./images/create_fb_app_002.png)
-... (additional images)
+![App creation process](./images/create_fb_app_003.png)
+![App creation process](./images/create_fb_app_004.png)
+![App creation process](./images/create_fb_app_005.png)
+![App creation process](./images/create_fb_app_006.png)
+![App creation process](./images/create_fb_app_007.png)
+![App creation process](./images/create_fb_app_008.png)
+![App creation process](./images/create_fb_app_009.png)
+![App creation process](./images/create_fb_app_010.png)
+![App creation process](./images/create_fb_app_011.png)
+
 </details>
 
 <details>
@@ -53,7 +63,11 @@ First, you need to create a Facebook App. You can do this by visiting the [Faceb
 Once your app is created, you will need to get your **App ID** and **App Secret**.
 
 ![Finding App ID and Secret](./images/fb_app_id_secret_get_001.png)
-... (additional images)
+![Finding App ID and Secret](./images/fb_app_id_secret_get_002.png)
+![Finding App ID and Secret](./images/fb_app_id_secret_get_003.png)
+![Finding App ID and Secret](./images/fb_app_id_secret_get_004.png)
+![Finding App ID and Secret](./images/fb_app_id_secret_get_005.png)
+
 </details>
 
 <details>
@@ -70,7 +84,11 @@ Navigate to our settings page to continue the integration: [https://smartchatbot
 Enter the **App ID** and **App Secret** you obtained from the Facebook Developer portal into the respective fields on our platform.
 
 ![Setting App ID and Secret](./images/fb_app_id_secret_secret_set_001.png)
-... (additional images)
+![Setting App ID and Secret](./images/fb_app_id_secret_secret_set_002.png)
+![Setting App ID and Secret](./images/fb_app_id_secret_secret_set_003.png)
+![Setting App ID and Secret](./images/fb_app_id_secret_secret_set_004.png)
+![Setting App ID and Secret](./images/fb_app_id_secret_secret_set_005.png)
+
 </details>
 
 <details>
@@ -83,7 +101,18 @@ You will need to generate a short-lived access token from the **Graph API Explor
 - Generate the token.
 
 ![Generating Access Token](./images/short_live_access_token_get_001.png)
-... (additional images)
+![Generating Access Token](./images/short_live_access_token_get_002.png)
+![Generating Access Token](./images/short_live_access_token_get_003.png)
+![Generating Access Token](./images/short_live_access_token_get_004.png)
+![Generating Access Token](./images/short_live_access_token_get_005.png)
+![Generating Access Token](./images/short_live_access_token_get_006.png)
+![Generating Access Token](./images/short_live_access_token_get_007.png)
+![Generating Access Token](./images/short_live_access_token_get_008.png)
+![Generating Access Token](./images/short_live_access_token_get_009.png)
+![Generating Access Token](./images/short_live_access_token_get_010.png)
+![Generating Access Token](./images/short_live_access_token_get_011.png)
+![Generating Access Token](./images/short_live_access_token_get_012.png)
+
 </details>
 
 <details>
@@ -123,7 +152,8 @@ A webhook enables real-time communication between Facebook and our platform.
 In your Facebook App settings, navigate to the **Webhooks** page.
 
 ![Webhooks Page](./images/webhook_facebook_01.png)
-... (additional images)
+![Webhooks Page](./images/webhook_facebook_02.png)
+
 </details>
 
 <details>
@@ -142,6 +172,8 @@ In your Facebook App settings, navigate to the **Webhooks** page.
 Click **Verify and Save**.
 
 ![Verify and Save](./images/webhook_facebook_04.png)
+![Verify and Save](./images/webhook_facebook_05.png)
+![Verify and Save](./images/webhook_facebook_06.png)
 </details>
 
 <details>
@@ -150,63 +182,18 @@ Click **Verify and Save**.
 Subscribe to the required permissions under the **Pages** tab.
 
 ![Subscribing to Permissions](./images/webhook_facebook_07.png)
-... (additional images)
+![Subscribing to Permissions](./images/webhook_facebook_08.png)
+![Subscribing to Permissions](./images/permission_and_feature_01.png)
 </details>
 
 Congratulations! Your Facebook integration is now complete.
 
-<details>
-<summary>Step 9: Send a Test Message Using Graph API Explorer</summary>
-
-After setting up your app and obtaining the necessary tokens, it's a good practice to send a test message to your Facebook Page to ensure everything is working correctly. You can do this using the Graph API Explorer.
-
-1.  **Go to the Graph API Explorer:**
-    *   Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer/).
-
-2.  **Set the API Endpoint:**
-    *   In the query field, change the endpoint from `me?fields=id,name` to `me/messages`.
-
-3.  **Use the POST Method:**
-    *   Change the HTTP method from `GET` to `POST`.
-
-4.  **Add JSON Body:**
-    *   Click on the **Add a Field** button to add a JSON body to your request. You will need to provide the `recipient` and `message` parameters.
-
-    ```json
-    {
-      "recipient": {
-        "id": "YOUR_PAGE_ID"
-      },
-      "message": {
-        "text": "Hello, this is a test message!"
-      },
-      "messaging_type": "RESPONSE"
-    }
-    ```
-
-    *   Replace `YOUR_PAGE_ID` with your actual Facebook Page ID.
-
-5.  **Submit the Request:**
-    *   Click the **Submit** button to send the message. If the request is successful, you will receive a response containing the `recipient_id` and `message_id`.
-
-    ```json
-    {
-      "recipient_id": "YOUR_PAGE_ID",
-      "message_id": "A_UNIQUE_MESSAGE_ID"
-    }
-    ```
-
-6.  **Check Your Page's Inbox:**
-    *   Go to your Facebook Page's inbox to confirm that you have received the test message.
-
-This process ensures that your app has the correct permissions and that your access token is working as expected. If you encounter any issues, refer to the **Troubleshooting** section for guidance.
-
-</details>
-
 ---
 
+## WhatsApp Integration
+
 <details>
-<summary>WhatsApp Integration</summary>
+<summary>WhatsApp Integration Guide</summary>
 
 Integrating your WhatsApp Business Account allows you to manage customer conversations directly through our platform. This section will guide you through connecting your WhatsApp Business Account.
 
@@ -228,8 +215,10 @@ We are currently finalizing the documentation for WhatsApp integration. Please c
 
 ---
 
+## Troubleshooting
+
 <details>
-<summary>Troubleshooting</summary>
+<summary>Common Issues and Solutions</summary>
 
 If you encounter any issues during the integration process, refer to the common problems and solutions below.
 
