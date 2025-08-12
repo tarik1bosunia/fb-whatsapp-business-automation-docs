@@ -1,0 +1,10 @@
+email
+read_insights
+pages_show_list
+ads_management
+ads_read
+pages_messaging
+whatsapp_business_management
+pages_read_engagement
+pages_manage_posts
+whatsapp_business_messaging

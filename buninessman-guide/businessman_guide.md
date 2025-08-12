@@ -1,86 +1,251 @@
-# Platform Integration
+# Businessman's Guide to Platform Integration
+
+## Introduction
+
+Welcome to the Businessman's Guide for integrating your social media platforms with our service. This guide provides step-by-step instructions to connect your Facebook and WhatsApp accounts, enabling you to streamline your customer communications and enhance engagement.
+
+By following this guide, you will be able to:
+
+- **Automate** customer interactions on Facebook and WhatsApp.
+- **Centralize** your messaging workflows.
+- **Leverage** our platform's features to grow your business.
+
+## Table of Contents
+
+- [Facebook Integration](#facebook-integration)
+  - [Step 1: Create a Facebook App](#step-1-create-a-facebook-app)
+  - [Step 2: Obtain App ID and App Secret](#step-2-obtain-app-id-and-app-secret)
+  - [Step 3: Configure Settings on Our Platform](#step-3-configure-settings-on-our-platform)
+  - [Step 4: Set App ID and App Secret](#step-4-set-app-id-and-app-secret)
+  - [Step 5: Generate a Short-Lived Access Token](#step-5-generate-a-short-lived-access-token)
+  - [Step 6: Set the Short-Lived Access Token](#step-6-set-the-short-lived-access-token)
+  - [Step 7: Create and Set a Facebook Verify Token](#step-7-create-and-set-a-facebook-verify-token)
+  - [Step 8: Connect Your Account](#step-8-connect-your-account)
+- [Verify Webhook and Permissions](#verify-webhook-and-permissions)
+  - [Step 1: Go to the Webhooks Page](#step-1-go-to-the-webhooks-page)
+  - [Step 2: Configure Webhook](#step-2-configure-webhook)
+  - [Step 3: Verify and Save](#step-3-verify-and-save)
+  - [Step 4: Subscribe to Permissions](#step-4-subscribe-to-permissions)
+- [WhatsApp Integration](#whatsapp-integration)
+
+---
 
 ## Facebook Integration
 
-This guide will walk you through the process of integrating your Facebook Page with our platform.
+This section will walk you through integrating your Facebook Page with our platform.
 
-1.  **Access Settings:** Go to our settings page by clicking this link: [https://smartchatbot.click/settings](https://smartchatbot.click/settings).
+<details>
+<summary>Step 1: Create a Facebook App</summary>
 
-2.  **Navigate to Integrations:** Click on the **`Platform Integrations`** tab.
+First, you need to create a Facebook App. You can do this by visiting the [Facebook for Developers portal](https://developers.facebook.com/apps/creation/).
 
-    ![facebook_integration_start](./images/facebook_integration_start.png)
+- Click on the **Create App** button.
+- Provide an **App name** and your **App contact email**.
 
-3.  **Enter Your Facebook Details:** Fill in the required fields:
-    * **Facebook Page ID:** Enter your unique Page ID.
+![Creating a Facebook App](./images/create_fb_app_001.png)
+![App creation process](./images/create_fb_app_002.png)
+... (additional images)
+</details>
 
-        ![pageid](./images/page_id_01.png)
+<details>
+<summary>Step 2: Obtain App ID and App Secret</summary>
 
-    * **Facebook Access Token:** To obtain a Facebook Access Token, you typically need to create a Facebook Developer App and generate a User Access Token or Page Access Token with the necessary permissions. This process involves:
-        1. Going to the Facebook for Developers website:
-        [https://developers.facebook.com/apps/](./https://developers.facebook.com/apps/)
-        2. Creating a new App or selecting an existing one.
-        for creating new app -
-        cilck on the `Create App ` button
-        it will redirect you 
-        [https://developers.facebook.com/apps/creation/](https://developers.facebook.com/apps/creation/) link. it will look like bellow
-        [](./images/)
+Once your app is created, you will need to get your **App ID** and **App Secret**.
 
-        give `App name` and `App contact email` here 
+![Finding App ID and Secret](./images/fb_app_id_secret_get_001.png)
+... (additional images)
+</details>
 
-        3. Navigating to the "Graph API Explorer" or similar tool.
-        4. Selecting your app and the desired permissions (e.g., `pages_show_list`, `pages_read_engagement`, `pages_manage_metadata`, `pages_messaging`).
-        5. Generating the Access Token.
-        Please refer to Facebook's official developer documentation for the most up-to-date and detailed instructions on obtaining the correct access token for your specific use case.
+<details>
+<summary>Step 3: Configure Settings on Our Platform</summary>
 
-    * **Facebook Verify Token:** Create a unique token. For security, it's best to use one that is more than 20 characters long.
+Navigate to our settings page to continue the integration: [https://smartchatbot.click/settings](https://smartchatbot.click/settings). Then, click on the **Platform Integrations** tab.
 
-4.  **Connect:** Click the **`connect`** button.
+![Platform Integrations Tab](./images/facebook_integrations_start.png)
+</details>
 
-    ![facebook_integration_success](./images/facebook_integration_success.png)
+<details>
+<summary>Step 4: Set App ID and App Secret</summary>
+
+Enter the **App ID** and **App Secret** you obtained from the Facebook Developer portal into the respective fields on our platform.
+
+![Setting App ID and Secret](./images/fb_app_id_secret_secret_set_001.png)
+... (additional images)
+</details>
+
+<details>
+<summary>Step 5: Generate a Short-Lived Access Token</summary>
+
+You will need to generate a short-lived access token from the **Graph API Explorer**.
+
+- Select your app.
+- Grant the necessary permissions (e.g., `pages_show_list`, `pages_read_engagement`, `pages_manage_metadata`, `pages_messaging`).
+- Generate the token.
+
+![Generating Access Token](./images/short_live_access_token_get_001.png)
+... (additional images)
+</details>
+
+<details>
+<summary>Step 6: Set the Short-Lived Access Token</summary>
+
+Copy the generated token and paste it into the designated field on our platform.
+
+![Setting Short-Lived Token](./images/short_live_access_token_set_001.png)
+</details>
+
+<details>
+<summary>Step 7: Create and Set a Facebook Verify Token</summary>
+
+Create a unique and secure **Verify Token**. It should be more than 20 characters long.
+
+![Setting Verify Token](./images/set_fb_verify_token_001.png)
+![Confirming Verify Token](./images/set_fb_verify_token_002.png)
+</details>
+
+<details>
+<summary>Step 8: Connect Your Account</summary>
+
+Click the **Connect** button to finalize the connection.
+
+![Connection Success](./images/facebook_integration_success.png)
+</details>
 
 ---
 
 ## Verify Webhook and Permissions
 
-After a successful connection, you must set up the webhook on Facebook's developer portal.
+A webhook enables real-time communication between Facebook and our platform.
 
-1.  **Go to the Webhooks Page:** Open the following URL in your browser, replacing `{APP_ID}` and `{BUSINESS_ID}` with your specific IDs.
+<details>
+<summary>Step 1: Go to the Webhooks Page</summary>
 
-    `https://developers.facebook.com/apps/{APP_ID}/webhooks/?business_id={BUSINESS_ID}`
+In your Facebook App settings, navigate to the **Webhooks** page.
 
-    * [**How to get your APP_ID**](./how_to_get_APP_ID.md): Your APP_ID is found in your Facebook Developer App dashboard. After logging in, select your app, and the APP_ID will be prominently displayed on the dashboard or in the "Settings" -> "Basic" section.
-    * [**How to get your BUSINESS_ID**](./how_to_get_BUSINESS_ID.md): Your BUSINESS_ID is associated with your Facebook Business Manager account. You can find it in your Business Manager settings under "Business Info" or "Business Settings."
+![Webhooks Page](./images/webhook_facebook_01.png)
+... (additional images)
+</details>
 
-    ![web_hook_facebook_01](./images/webhook_facebook_01.png)
+<details>
+<summary>Step 2: Configure Webhook</summary>
 
-2.  **Configure Webhook:**
-    * Select the **`Pages`** tab.
+- Select the **Pages** tab.
+- Enter the **Callback URL**: `https://api.smartchatbot.click/api/messaging/webhook/messenger/` (ensure the trailing `/` is included).
+- Enter the same **Verify Token** you created earlier.
 
-        ![web_hook_facebook_02](./images/webhook_facebook_02.png)
-        ![webhook_facebook_03](./images/webhook_facebook_03.png)
+![Configuring Webhook](./images/webhook_facebook_03.png)
+</details>
 
-    * In the provided fields, enter the **Callback URL** and **Verify Token**.
-        * **Callback URL:** `https://api.smartchatbot.click/api/messaging/webhook/messenger/`
-            * **Important:** Don't forget to include the `/` at the end of the URL.
-        * **Facebook Verify Token:** Use the **exact same token** you entered in the previous step.
+<details>
+<summary>Step 3: Verify and Save</summary>
 
-3.  **Verify and Save:** Click the **`verify and save`** button.
+Click **Verify and Save**.
 
-    ![web_hook_facebook_04](./images/webhook_facebook_04.png)
+![Verify and Save](./images/webhook_facebook_04.png)
+</details>
 
-    If successful, the page will reload and show a new view.
+<details>
+<summary>Step 4: Subscribe to Permissions</summary>
 
-    ![web_hook_facebook_05](./images/webhook_facebook_05.png)
+Subscribe to the required permissions under the **Pages** tab.
 
-4.  **Subscribe to Permissions:**
-    * Go back to the **`Pages`** tab. It will now list the available permissions.
+![Subscribing to Permissions](./images/webhook_facebook_07.png)
+... (additional images)
+</details>
 
-        ![web_hook_facebook_06](./images/webhook_facebook_06.png)
+Congratulations! Your Facebook integration is now complete.
 
-    * Scroll down and set the four required permissions from **`unsubscribed`** to **`subscribed`**.
-    * Your final permissions should look like this:
+<details>
+<summary>Step 9: Send a Test Message Using Graph API Explorer</summary>
 
-        ![web_hook_facebook_07](./images/webhook_facebook_07.png)
-        ![web_hook_facebook_08](./images/webhook_facebook_08.png)
+After setting up your app and obtaining the necessary tokens, it's a good practice to send a test message to your Facebook Page to ensure everything is working correctly. You can do this using the Graph API Explorer.
 
-Congratulations! Your Facebook Webhook is now set up and ready.
+1.  **Go to the Graph API Explorer:**
+    *   Open the [Graph API Explorer](https://developers.facebook.com/tools/explorer/).
+
+2.  **Set the API Endpoint:**
+    *   In the query field, change the endpoint from `me?fields=id,name` to `me/messages`.
+
+3.  **Use the POST Method:**
+    *   Change the HTTP method from `GET` to `POST`.
+
+4.  **Add JSON Body:**
+    *   Click on the **Add a Field** button to add a JSON body to your request. You will need to provide the `recipient` and `message` parameters.
+
+    ```json
+    {
+      "recipient": {
+        "id": "YOUR_PAGE_ID"
+      },
+      "message": {
+        "text": "Hello, this is a test message!"
+      },
+      "messaging_type": "RESPONSE"
+    }
+    ```
+
+    *   Replace `YOUR_PAGE_ID` with your actual Facebook Page ID.
+
+5.  **Submit the Request:**
+    *   Click the **Submit** button to send the message. If the request is successful, you will receive a response containing the `recipient_id` and `message_id`.
+
+    ```json
+    {
+      "recipient_id": "YOUR_PAGE_ID",
+      "message_id": "A_UNIQUE_MESSAGE_ID"
+    }
+    ```
+
+6.  **Check Your Page's Inbox:**
+    *   Go to your Facebook Page's inbox to confirm that you have received the test message.
+
+This process ensures that your app has the correct permissions and that your access token is working as expected. If you encounter any issues, refer to the **Troubleshooting** section for guidance.
+
+</details>
+
+---
+
+<details>
+<summary>WhatsApp Integration</summary>
+
+Integrating your WhatsApp Business Account allows you to manage customer conversations directly through our platform. This section will guide you through connecting your WhatsApp Business Account.
+
+Our WhatsApp integration is designed to be simple and straightforward. To get started, you will need a WhatsApp Business Account and an approved phone number.
+
+**Key Benefits of WhatsApp Integration:**
+
+*   **Direct Customer Engagement:** Communicate with your customers on their preferred messaging app.
+*   **Automated Notifications:** Send order confirmations, shipping updates, and appointment reminders.
+*   **24/7 Customer Support:** Use chatbots to answer frequently asked questions and resolve issues instantly.
+*   **Personalized Marketing:** Deliver targeted promotions and special offers to your audience.
+
+**Coming Soon:**
+
+We are currently finalizing the documentation for WhatsApp integration. Please check back soon for a detailed, step-by-step guide.
+
+![WhatsApp Integration Start](./images/whatsapp_integration_start.png)
+</details>
+
+---
+
+<details>
+<summary>Troubleshooting</summary>
+
+If you encounter any issues during the integration process, refer to the common problems and solutions below.
+
+**Common Issues:**
+
+*   **Invalid App ID or App Secret:**
+    *   **Solution:** Double-check that you have copied the correct App ID and App Secret from your Facebook Developer account. Ensure there are no extra spaces or characters.
+
+*   **Incorrect Callback URL:**
+    *   **Solution:** Verify that the Callback URL is entered correctly in your webhook settings. It must be `https://api.smartchatbot.click/api/messaging/webhook/messenger/` and include the trailing `/`.
+
+*   **Permissions Not Granted:**
+    *   **Solution:** Ensure that you have granted all the required permissions in your Facebook App settings. These include `pages_show_list`, `pages_read_engagement`, `pages_manage_metadata`, and `pages_messaging`.
+
+*   **Webhook Verification Failed:**
+    *   **Solution:** Confirm that the Verify Token on our platform matches the one you entered in your Facebook App's webhook settings. They must be identical.
+
+If you continue to experience problems, please contact our support team for assistance.
+</details>

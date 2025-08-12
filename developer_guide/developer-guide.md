@@ -30,6 +30,7 @@ Detailed steps for setting up a local development environment, including:
 An explanation of the project's directory structure, key modules, and important files to help developers navigate the codebase.
 
 ## API Documentation
+- [how to get long lived facebook access token](./get_long_live_access_token_updated.md)
 
 Documentation for internal and external APIs, including:
 - Endpoints
